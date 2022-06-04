@@ -25897,12 +25897,12 @@ function ArticleList() {
             gutterBottom: true,
             variant: "h5",
             component: "div",
-            children: article.title
+            children: article.less_title
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
             target: "_blank",
             href: article.url,
             color: "text.secondary",
-            children: article.url
+            children: article.less_url
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {

@@ -26,14 +26,14 @@ function ArticleList() {
                 <Card sx={{ maxWidth: 345 }} key="article.id">
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            {article.title}
+                            {article.less_title}
                         </Typography>
                         <Link
                             target="_blank"
                             href={article.url}
                             color="text.secondary"
                         >
-                            {article.url}
+                            {article.less_url}
                         </Link>
                     </CardContent>
                     <CardActions>
