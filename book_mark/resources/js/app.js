@@ -20,6 +20,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Example from './components/Example';
 import About from "./About";
 import ArticleCreate from "./article/ArticleCreate";
+import ArticleList from "./article/ArticleList";
 
 const App = () => {
     return (
@@ -27,6 +28,7 @@ const App = () => {
             <Routes>
                 <Route path="/about" element={<About />} />
                 <Route path="/article/create" element={<ArticleCreate />} />
+                <Route path="/article/index" element={<ArticleList />} />
             </Routes>
         </BrowserRouter>
     );

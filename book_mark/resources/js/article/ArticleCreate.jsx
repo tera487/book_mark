@@ -53,7 +53,6 @@ function ArticleCreate() {
                         label="site-url"
                         name="url"
                         autoComplete="url"
-                        autoFocus
                         onChange={(e) => setUrl(e.target.value)}
                     />
                     <Button
@@ -68,7 +67,6 @@ function ArticleCreate() {
             </Box>
         </Container>
     );
-    // };
 }
 
 export default ArticleCreate;

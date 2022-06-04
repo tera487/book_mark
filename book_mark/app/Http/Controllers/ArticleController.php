@@ -14,4 +14,9 @@ class ArticleController extends Controller
         $article->save();
         return true;
     }
+
+    public function index()
+    {
+        return response()->json(Article::get());
+    }
 }
