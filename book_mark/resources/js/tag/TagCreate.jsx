@@ -38,10 +38,10 @@ export default function TagCreate() {
                         margin="normal"
                         required
                         fullWidth
-                        id="url"
-                        label="site-url"
+                        id="tag"
+                        label="tag"
                         name="url"
-                        autoComplete="url"
+                        autoComplete="tag"
                         onChange={(e) => setName(e.target.value)}
                     />
                     <Button
