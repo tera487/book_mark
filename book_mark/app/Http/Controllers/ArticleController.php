@@ -12,6 +12,10 @@ class ArticleController extends Controller
         $article = new Article;
         $article = $article->fill($request->only(['title', 'url']));
         $article->save();
+        if (!empty($request->tag)) {
+            logger(array_column($request->tag, 'id'));
+            $article->tags()->sync(array_column($request->tag, 'id'));
+        }
         return true;
     }
 

@@ -21,14 +21,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./About";
 import ArticleCreate from "./article/ArticleCreate";
 import ArticleList from "./article/ArticleList";
+import TagCreate from "./tag/TagCreate";
 
 const App = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/about" element={<About />} />
-                <Route path="/article/create" element={<ArticleCreate />} />
-                <Route path="/article/index" element={<ArticleList />} />
+                <Route path="/articles/create" element={<ArticleCreate />} />
+                <Route path="/articles/index" element={<ArticleList />} />
+                <Route path="/tags/create" element={<TagCreate />} />
             </Routes>
         </BrowserRouter>
     );

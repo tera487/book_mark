@@ -8,6 +8,7 @@ import {
     Button,
     Typography,
     Link,
+    Grid,
 } from "@mui/material";
 
 function ArticleList() {
@@ -21,27 +22,35 @@ function ArticleList() {
     }, []);
 
     return (
-        <Container fixed sx={{ my: 5 }}>
-            {articleData.map((article) => (
-                <Card sx={{ maxWidth: 345 }} key="article.id">
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {article.less_title}
-                        </Typography>
-                        <Link
-                            target="_blank"
-                            href={article.url}
-                            color="text.secondary"
-                        >
-                            {article.less_url}
-                        </Link>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Share</Button>
-                        <Button size="small">Learn More</Button>
-                    </CardActions>
-                </Card>
-            ))}
+        <Container sx={{ my: 5, display: "flex" }}>
+            <Grid container spacing={2}>
+                {articleData.map((article) => (
+                    <Grid key={article.id} item xs={4}>
+                        <Card sx={{ maxWidth: 345, minHeight: 200, mx: 2 }}>
+                            <CardContent>
+                                <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="div"
+                                >
+                                    {article.less_title}
+                                </Typography>
+                                <Link
+                                    target="_blank"
+                                    href={article.url}
+                                    color="text.secondary"
+                                >
+                                    {article.less_url}
+                                </Link>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small">Share</Button>
+                                <Button size="small">Learn More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
         </Container>
     );
 }

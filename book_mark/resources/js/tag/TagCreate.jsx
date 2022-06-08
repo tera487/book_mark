@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ArticleTagSelect from "../components/article/ArticleTagSelect";
+
 import {
     Box,
     Button,
@@ -10,13 +10,11 @@ import {
     Typography,
 } from "@mui/material";
 
-function ArticleCreate() {
-    const [url, setUrl] = useState("");
-    const [title, setTitle] = useState("");
-    const [tag, setTag] = useState([]);
+export default function TagCreate() {
+    const [name, setName] = useState("");
 
     const createArticle = () => {
-        axios.post("/api/articles", { title, url, tag }).then(() => {
+        axios.post("/api/tags", { name }).then(() => {
             console.log("successful");
         });
     };
@@ -33,31 +31,19 @@ function ArticleCreate() {
                 }}
             >
                 <Typography component={"h1"} variant={"h5"}>
-                    Book Mark
+                    Tag
                 </Typography>
                 <Box component={"form"} onSubmit={createArticle}>
                     <TextField
                         margin="normal"
                         required
                         fullWidth
-                        id="title"
-                        label="titel"
-                        name="title"
-                        autoComplete="title"
-                        autoFocus
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="url"
-                        label="site-url"
+                        id="tag"
+                        label="tag"
                         name="url"
-                        autoComplete="url"
-                        onChange={(e) => setUrl(e.target.value)}
+                        autoComplete="tag"
+                        onChange={(e) => setName(e.target.value)}
                     />
-                    <ArticleTagSelect setTag={setTag}></ArticleTagSelect>
                     <Button
                         fullWidth
                         variant={"outlined"}
@@ -71,5 +57,3 @@ function ArticleCreate() {
         </Container>
     );
 }
-
-export default ArticleCreate;
