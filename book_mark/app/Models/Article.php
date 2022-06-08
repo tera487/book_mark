@@ -15,6 +15,11 @@ class Article extends Model
         'less_title', 'less_url'
     ];
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function getLessTitleAttribute()
     {
         return $this->adjustStringLength($this->title);

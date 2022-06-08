@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ArticleTagSelect from "../components/article/ArticleTagSelect";
 import {
     Box,
     Button,
@@ -12,10 +13,11 @@ import {
 function ArticleCreate() {
     const [url, setUrl] = useState("");
     const [title, setTitle] = useState("");
+    const [tag, setTag] = useState([]);
 
     const createArticle = () => {
-        axios.post("/api/articles", { title, url }).then(() => {
-            history.push("/read");
+        axios.post("/api/articles", { title, url, tag }).then(() => {
+            console.log("successful");
         });
     };
 
@@ -55,6 +57,7 @@ function ArticleCreate() {
                         autoComplete="url"
                         onChange={(e) => setUrl(e.target.value)}
                     />
+                    <ArticleTagSelect setTag={setTag}></ArticleTagSelect>
                     <Button
                         fullWidth
                         variant={"outlined"}
