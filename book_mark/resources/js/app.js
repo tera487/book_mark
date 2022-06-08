@@ -4,7 +4,7 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -14,25 +14,29 @@ require('./bootstrap');
 
 // require('./components/Example');
 
-
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter,  Routes, Route } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Example from './components/Example';
 import About from "./About";
+import ArticleCreate from "./article/ArticleCreate";
+import ArticleList from "./article/ArticleList";
+import TagCreate from "./tag/TagCreate";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/about" element={<About />}/>
-    </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/articles/create" element={<ArticleCreate />} />
+                <Route path="/articles/index" element={<ArticleList />} />
+                <Route path="/tags/create" element={<TagCreate />} />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 if (document.getElementById("app")) {
-  ReactDOM.render(<App />, document.getElementById("app"));
-  }
-  export default App;
+    ReactDOM.render(<App />, document.getElementById("app"));
+}
+export default App;
