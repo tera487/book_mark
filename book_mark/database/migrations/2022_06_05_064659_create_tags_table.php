@@ -19,9 +19,9 @@ class CreateTagsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('articles', function (Blueprint $table) {
-            $table->dropColumn('tag');
-        });
+        // Schema::table('articles', function (Blueprint $table) {
+        //     $table->dropColumn('tag');
+        // });
     }
 
     /**

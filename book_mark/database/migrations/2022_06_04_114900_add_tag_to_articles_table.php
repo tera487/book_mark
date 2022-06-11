@@ -13,9 +13,9 @@ class AddTagToArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            $table->json('tag')->nullable()->after('url')->comment('tag');
-        });
+        // Schema::table('articles', function (Blueprint $table) {
+        //     $table->json('tag')->nullable()->after('url')->comment('tag');
+        // });
     }
 
     /**
